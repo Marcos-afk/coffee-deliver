@@ -19,6 +19,9 @@ export const GlobalStyle = createGlobalStyle`
     background: ${({ theme }) => theme.colors.base.background};
     color: ${({ theme }) => theme.colors.base.text};
     -webkit-font-smoothing: antialiased;
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 2rem;
   }
 
 
@@ -27,4 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     font-size: 1.25rem;
   }
+
+  @media (max-width: 768px) {
+    html {
+      font-size: 87.5%;
+    }
+
+  }
+
 `;
