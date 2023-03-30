@@ -4,6 +4,13 @@ export const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 330px) {
+    & {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
 `;
 
 export const ActionsContainer = styled.div`
