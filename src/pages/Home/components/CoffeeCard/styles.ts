@@ -11,7 +11,7 @@ export const Container = styled.div`
   padding: 1rem;
 
   & img{
-    margin-top: calc(0px - 2.5rem + 6px);
+    margin-top: -3rem;
   }
 `;
 
@@ -30,7 +30,7 @@ export const Tag = styled.div`
   text-transform: uppercase;
   font-size: 0.625rem;
   line-height: 130%;
-  font-weight: bold;
+  font-weight: 800;
 `;
 
 export const Title = styled.span`
@@ -38,7 +38,7 @@ export const Title = styled.span`
   font-size: 1.25rem;
   font-family: 'Baloo 2';
   line-height: 130%;
-  font-weight: bold;
+  font-weight: 800;
   color: ${({ theme }) => theme.colors.base.subtitle};
   text-align: center;
 `;
@@ -74,7 +74,7 @@ export const Price = styled.span`
   font-size: 1.5rem;
   line-height: 130%;
   color: ${({ theme }) => theme.colors.base.text};
-  font-weight: bolder;
+  font-weight: 800;
   font-family: 'Baloo 2';
 `;
 
@@ -94,9 +94,6 @@ export const Input = styled.input`
   border-radius: 6px;
   padding: 0.5rem;
 
-  &:focus {
-    box-shadow: 0 0 0 0;
-  }
 `;
 
 export const IconContainer = styled.button`
@@ -105,4 +102,16 @@ export const IconContainer = styled.button`
   border-radius: 6px;
   padding: 0.5rem;
   border: 0;
+
+  transition: background 0.2s;
+
+  &:not(:disabled):hover {
+    background: ${({ theme }) => theme.colors.purple.default};
+  }
+
+  &:disabled {
+    opacity: 70%;
+    cursor: not-allowed;
+  }
+
 `;

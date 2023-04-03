@@ -8,7 +8,7 @@ export const Container = styled.section`
 export const Title = styled.span`
   font-size: 2rem;
   font-family: 'Baloo 2';
-  font-weight: bolder;
+  font-weight: 800;
   line-height: 130%;
   color: ${({ theme }) => theme.colors.base.subtitle};
 `;
