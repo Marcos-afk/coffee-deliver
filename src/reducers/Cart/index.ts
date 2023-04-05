@@ -51,6 +51,12 @@ export const cartReducer = (
       });
     }
 
+    case CartActionsTypes.CLEAR_CART: {
+      return produce(state, (draft) => {
+        draft.cart = [];
+      });
+    }
+
     default:
       return state;
   }

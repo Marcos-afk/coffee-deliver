@@ -11,6 +11,7 @@ export const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/success/:form" element={<Success />} />
+        <Route path="*" element={<h1>404 - Not Found</h1>} />
       </Route>
     </Routes>
   );

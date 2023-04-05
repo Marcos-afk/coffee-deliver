@@ -20,16 +20,20 @@ export const Checkout = () => {
   const { colors } = useTheme();
   const [totalPrice, setTotalPrice] = useState(0);
   const [paymentMethod, setPaymentMethod] = useState('creditCard');
-  const { cart, removeItemToCart, updateItemToCart } = useCart();
+  const { cart, removeItemToCart, updateItemToCart, clearCart } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
+    if (cart.length < 1) {
+      navigate('/');
+    }
+
     const total = cart.reduce((acc, item) => {
       return acc + item.coffee.price * item.amount;
     }, 0);
 
     setTotalPrice(total);
-  }, [cart]);
+  }, [cart, navigate]);
 
   const {
     register,
@@ -50,6 +54,8 @@ export const Checkout = () => {
   });
 
   const handleSubmittingForm = (data: CheckoutSchemaSchemaProps) => {
+    clearCart();
+    Object.assign(data, { paymentMethod });
     navigate(`/success/${JSON.stringify(data)}`);
     reset();
   };

@@ -7,6 +7,7 @@ export interface CartContextProps {
   addNewItemToCart: (coffee: CoffeeDTO, amount: number) => void;
   removeItemToCart: (coffeeId: number) => void;
   updateItemToCart: (coffeeId: number, amount: number) => void;
+  clearCart: () => void;
 }
 
 export interface CartProviderProps {

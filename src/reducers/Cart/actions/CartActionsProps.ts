@@ -6,6 +6,7 @@ export enum CartActionsTypes {
   ADD_NEW_ITEM_IN_CART = 'ADD_NEW_ITEM_IN_CART',
   REMOVE_ITEM_TO_CART = 'REMOVE_ITEM_TO_CART',
   UPDATE_ITEM_TO_CART = 'UPDATE_ITEM_TO_CART',
+  CLEAR_CART = 'CLEAR_CART',
 }
 
 export type CartActionsTypesProps =
@@ -20,4 +21,7 @@ export type CartActionsTypesProps =
   | {
       type: CartActionsTypes.UPDATE_ITEM_TO_CART;
       payload: { coffeeId: number; amount: number };
+    }
+  | {
+      type: CartActionsTypes.CLEAR_CART;
     };

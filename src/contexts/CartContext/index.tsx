@@ -57,6 +57,12 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     });
   };
 
+  const clearCart = () => {
+    dispatch({
+      type: CartActionsTypes.CLEAR_CART,
+    });
+  };
+
   useEffect(() => {
     const stateJson = JSON.stringify(cartState);
     localStorage.setItem(`@coffee-deliver:cart-state-${version}`, stateJson);
@@ -66,7 +72,13 @@ export const CartProvider = ({ children }: CartProviderProps) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, addNewItemToCart, removeItemToCart, updateItemToCart }}
+      value={{
+        cart,
+        addNewItemToCart,
+        removeItemToCart,
+        updateItemToCart,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
