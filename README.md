@@ -1,21 +1,17 @@
-# Ignite Timer
+# Coffee Deliver
 
 <div align="center">
 	<img src="./src/assets/first-screen.png" width="800"alt="first-screen"/>
-  <img src="./src/assets/second-screen.png" width="800"alt="second-screen"/>
 </div>
 
 ## :dart: Objetivo
 
-Projeto que aplica o método de pomodoro, permitindo ao usuário cronometrar as
-suas tarefas no dia a dia, além de lhe permitir ver um histórico de todos as
-tarefas já realizadas. Projeto desenvolvido com o conteúdo estudado nas aulas do
-Chapter II da trilha de ReactJS do Bootcamp Ignite da Rocketseat
+Desafio 02 do conteúdo estudado nas aulas do Chapter II da trilha de React do
+Bootcamp Ignite da Rocketseat.
 
 ## :hammer_and_wrench: Ferramentas
 
 - [@phosphor-icons/react](https://github.com/phosphor-icons/react)
-- [date-fns](https://www.npmjs.com/package/date-fns)
 - [immer](https://github.com/immerjs/immer)
 - [react](https://pt-br.reactjs.org/)
 - [react-hook-form](https://react-hook-form.com/)
