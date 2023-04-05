@@ -1,5 +1,5 @@
 import * as Styled from './styles';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Container } from './components/Container';
 import { Icons } from '@components/Icons';
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
@@ -7,21 +7,14 @@ import { useTheme } from 'styled-components';
 import DeliverySvg from '@assets/delivery.svg';
 import { useEffect, useState } from 'react';
 import { SuccessProps } from './SucessProps';
-import { useCart } from '@hooks/useCart';
 
 export const Success = () => {
-  const { cart } = useCart();
   const [form, setForm] = useState({} as SuccessProps);
   const [paymentMethod, setPaymentMethod] = useState('');
   const { colors } = useTheme();
   const data = useParams();
-  const navigate = useNavigate();
 
   useEffect(() => {
-    if (cart.length < 1) {
-      navigate('/');
-    }
-
     const jsonParse = JSON.parse(data.form as string);
     setForm(jsonParse);
 
@@ -32,7 +25,7 @@ export const Success = () => {
     } else {
       setPaymentMethod('Cartão de Débito');
     }
-  }, [data, cart, navigate]);
+  }, [data]);
 
   return (
     <Container>
